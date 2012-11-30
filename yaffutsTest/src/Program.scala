@@ -1,3 +1,5 @@
+import yaffuts._
+
 object Program {
   def main(argv:Array[String]) = {
     val sut = new FailureTest
@@ -6,7 +8,7 @@ object Program {
     sut.onFail = (caseName:String) => failureName = caseName
     sut.run
 
-    if (failureName == "given_failure_assertion_should_test_fail")
+    if (failureName == "given_assert_failure_should_fail")
       println("Succeed")
     else
       println("Failed")
