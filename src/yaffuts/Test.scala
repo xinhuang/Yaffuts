@@ -8,7 +8,7 @@ abstract class Test extends Assertions {
   var currentTestName:String = null
   var currentMethod:TestMethod = null
 
-  def testMethods:ArrayList[TestMethod]
+  def testMethods:TestMethods
 
   def run() {
     for (i <- 0 until testMethods.size) {

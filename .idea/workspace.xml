@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc6448b4-464d-469d-abc8-1dc531c65ee6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yaffuts/Assertions.scala" afterPath="$PROJECT_DIR$/src/yaffuts/Assertions.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yaffuts/Test.scala" afterPath="$PROJECT_DIR$/src/yaffuts/Test.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" afterPath="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" />
     </list>
     <ignored path="yaffuts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,30 +72,35 @@
       <file leaf-file-name="FailureTest.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="10" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Assertions.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/yaffuts/Assertions.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.1734694">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TestMethod.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yaffuts/TestMethod.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="48" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Assertions.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yaffuts/Assertions.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="104" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/yaffuts/Test.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="36" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#17#43#0" expanded="true" />
-              </folding>
+            <state line="2" column="29" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0867347">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,9 +125,10 @@
         <option value="$PROJECT_DIR$/src/Test.scala" />
         <option value="$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala" />
         <option value="$PROJECT_DIR$/src/yaffuts/ArrayListEx.scala" />
-        <option value="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" />
-        <option value="$PROJECT_DIR$/src/yaffuts/Test.scala" />
         <option value="$PROJECT_DIR$/src/yaffuts/Assertions.scala" />
+        <option value="$PROJECT_DIR$/src/yaffuts/TestMethod.scala" />
+        <option value="$PROJECT_DIR$/src/yaffuts/Test.scala" />
+        <option value="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" />
       </list>
     </option>
   </component>
@@ -236,6 +241,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaffuts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaffuts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaffuts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestMethod.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -594,25 +621,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yaffuts/Test.scala">
+    <entry file="file://$PROJECT_DIR$/src/yaffuts/TestMethod.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#17#43#0" expanded="true" />
-          </folding>
+        <state line="2" column="48" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yaffuts/Assertions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.1734694">
+        <state line="10" column="104" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yaffuts/Test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="29" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0867347">
           <folding />
         </state>
       </provider>
