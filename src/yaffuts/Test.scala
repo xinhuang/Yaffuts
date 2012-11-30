@@ -1,6 +1,7 @@
 package yaffuts
 
 import java.util.ArrayList
+import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
   var onFail:String=>Unit = null
@@ -9,7 +10,7 @@ abstract class Test extends Assertions {
 
   def run() {
     for (i <- 0 until cases.size) {
-      cases.get(i)()
+      cases(i)()
     }
   }
 }
@@ -23,7 +24,7 @@ object Test {
 
   def run() {
     for (i <- 0 until tests.size) {
-      tests.get(i).run()
+      tests(i).run()
     }
   }
 }
