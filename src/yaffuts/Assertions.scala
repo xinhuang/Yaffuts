@@ -2,11 +2,9 @@ package yaffuts
 
 trait Assertions {
   def onFail:String=>Unit
-
+  def currentMethod:TestMethod
 
   object Assert {
-    def fail() = {
-      onFail("given_assert_failure_should_fail")
-    }
+    def fail() = onFail(currentMethod.name)
   }
 }

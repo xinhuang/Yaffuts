@@ -5,12 +5,16 @@ import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
   var onFail:String=>Unit = null
+  var currentTestName:String = null
+  var currentMethod:TestMethod = null
 
-  def cases:ArrayList[()=>Unit]
+  def testMethods:ArrayList[TestMethod]
 
   def run() {
-    for (i <- 0 until cases.size) {
-      cases(i)()
+    for (i <- 0 until testMethods.size) {
+      currentTestName = testMethods(i).name
+      currentMethod = testMethods(i)
+      testMethods(i).method()
     }
   }
 }
