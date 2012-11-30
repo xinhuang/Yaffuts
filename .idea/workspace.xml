@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc6448b4-464d-469d-abc8-1dc531c65ee6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" afterPath="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yaffuts/Test.scala" afterPath="$PROJECT_DIR$/src/yaffuts/Test.scala" />
     </list>
     <ignored path="yaffuts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,8 +99,10 @@
       <file leaf-file-name="Test.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/yaffuts/Test.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="29" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0867347">
-              <folding />
+            <state line="7" column="2" selection-start="150" selection-end="150" vertical-scroll-proportion="0.30357143">
+              <folding>
+                <element signature="e#17#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,8 +129,8 @@
         <option value="$PROJECT_DIR$/src/yaffuts/ArrayListEx.scala" />
         <option value="$PROJECT_DIR$/src/yaffuts/Assertions.scala" />
         <option value="$PROJECT_DIR$/src/yaffuts/TestMethod.scala" />
-        <option value="$PROJECT_DIR$/src/yaffuts/Test.scala" />
         <option value="$PROJECT_DIR$/yaffutsTest/src/FailureTest.scala" />
+        <option value="$PROJECT_DIR$/src/yaffuts/Test.scala" />
       </list>
     </option>
   </component>
@@ -642,8 +644,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yaffuts/Test.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0867347">
-          <folding />
+        <state line="7" column="2" selection-start="150" selection-end="150" vertical-scroll-proportion="0.30357143">
+          <folding>
+            <element signature="e#17#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
