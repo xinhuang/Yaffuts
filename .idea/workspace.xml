@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc6448b4-464d-469d-abc8-1dc531c65ee6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.scala" afterPath="$PROJECT_DIR$/src/Test.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala" afterPath="$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala" />
-      <change type="MOVED" beforePath="D:\workspace\yaffuts\src\TestCase.scala" afterPath="$PROJECT_DIR$/src/Test.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yaffutsTest/src/Program.scala" afterPath="$PROJECT_DIR$/yaffutsTest/src/Program.scala" />
     </list>
     <ignored path="yaffuts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Program.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Program.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yaffutsTest/src/Program.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="27" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+            <state line="10" column="12" selection-start="232" selection-end="232" vertical-scroll-proportion="0.43367347">
               <folding />
             </state>
           </provider>
@@ -74,7 +74,7 @@
       <file leaf-file-name="FailureCase.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+            <state line="6" column="17" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Test.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.56377554">
+            <state line="26" column="8" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,11 +112,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/Assert.scala" />
-        <option value="$PROJECT_DIR$/yaffutsTest/src/Program.scala" />
         <option value="$PROJECT_DIR$/src/Assertions.scala" />
         <option value="$PROJECT_DIR$/src/TestCase.scala" />
         <option value="$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala" />
         <option value="$PROJECT_DIR$/src/Test.scala" />
+        <option value="$PROJECT_DIR$/yaffutsTest/src/Program.scala" />
       </list>
     </option>
   </component>
@@ -521,7 +521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yaffutsTest/src/FailureCase.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+        <state line="6" column="17" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -533,16 +533,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yaffutsTest/src/Program.scala">
+    <entry file="jar://D:/Program Files/scala/lib/scala-library.jar!/scala/package.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="27" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+        <state line="43" column="29" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.6440678">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/scala/lib/scala-library.jar!/scala/collection/immutable/Vector.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="17" selection-start="3138" selection-end="3140" vertical-scroll-proportion="1.6018237">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.6.0_35/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="35" selection-start="8066" selection-end="8069" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.56377554">
+        <state line="26" column="8" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yaffutsTest/src/Program.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="12" selection-start="232" selection-end="232" vertical-scroll-proportion="0.43367347">
           <folding />
         </state>
       </provider>

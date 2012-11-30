@@ -6,7 +6,9 @@ object Program {
 
     var failureName:String = null
     sut.onFail = (caseName:String) => failureName = caseName
-    sut.run
+
+    Test.register(sut)
+    Test.run
 
     if (failureName == "given_assert_failure_should_fail")
       println("Succeed")
