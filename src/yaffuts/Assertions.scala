@@ -1,10 +1,28 @@
 package yaffuts
 
 trait Assertions {
-  def onFail:String=>Unit
-  def currentMethod:TestMethod
+  protected def onFail(errorMessage:String)
+  protected def onSucceed():Unit
 
   object Assert {
-    def fail() = onFail(currentMethod.name)
+    def fail() = {
+      failed("Assert.fail()")
+    }
+
+    def areEqual[T](expect:T, actual:T) = {
+      if (expect == actual) {
+        succeeded()
+      } else {
+        failed("Assert.areEqual")
+      }
+    }
+
+    private def succeeded():Unit = {
+      onSucceed()
+    }
+
+    private def failed(errorMessage:String) = {
+      onFail(errorMessage)
+    }
   }
 }

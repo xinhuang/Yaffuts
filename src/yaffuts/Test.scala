@@ -4,15 +4,32 @@ import java.util.ArrayList
 import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
-  var onFail:String=>Unit = null
+  protected override def onFail(errorMessage:String) = {
+    currentMethod.isSuccessfull = false
+    currentMethod.errorMessage = errorMessage
+  }
+
+  protected override def onSucceed() = {
+    currentMethod.isSuccessfull = true
+  }
+
   var currentMethod:TestMethod = null
 
   def testMethods:TestMethods
 
+  var failTotal:Int = 0
+  var succTotal:Int = 0
+
   def run() {
     for (i <- 0 until testMethods.size) {
       currentMethod = testMethods(i)
-      testMethods(i).method()
+      currentMethod.method()
+      if (currentMethod.isSuccessfull) {
+        succTotal += 1
+      }else{
+        failTotal += 1
+      }
+      print(".")
     }
   }
 }
@@ -25,8 +42,23 @@ object Test {
   }
 
   def run() {
+    val (succTotal, failTotal) = runAllTests()
+    printFailureMessage()
+    printf("\nTest: %d. Succeed: %d. Fail: %d.\n",
+      succTotal + failTotal, succTotal, failTotal)
+  }
+
+  private def runAllTests():(Int, Int) = {
+    var succTotal = 0
+    var failTotal = 0
     for (i <- 0 until tests.size) {
       tests(i).run()
+      succTotal += tests(i).succTotal
+      failTotal += tests(i).failTotal
     }
+    (succTotal, failTotal)
+  }
+
+  private def printFailureMessage() = {
   }
 }

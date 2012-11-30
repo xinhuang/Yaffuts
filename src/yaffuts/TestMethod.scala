@@ -1,9 +1,12 @@
 package yaffuts
 
-import java.util
+import java.util.ArrayList
 
-class TestMethod(val name:String, val method:()=>Unit) {}
+class TestMethod(val name:String, val method:()=>Unit) {
+  var errorMessage:String = ""
+  var isSuccessfull:Boolean = false
+}
 
-class TestMethods extends util.ArrayList[TestMethod] {
+class TestMethods extends ArrayList[TestMethod] {
   def add(name:String, method:()=>Unit):Unit = add(new TestMethod(name, method))
 }
