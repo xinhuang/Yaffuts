@@ -1,9 +1,10 @@
 import yaffuts._
+import java.util.ArrayList
 
 class FailureTest extends Test {
-  override def cases:Array[()=>Unit] = {
-    val result = new Array[()=>Unit](1)
-    result(0) = given_assert_failure_should_fail _
+  override def cases:ArrayList[()=>Unit] = {
+    val result = new ArrayList[()=>Unit]
+    result.add(given_assert_failure_should_fail _)
     return result
   }
 
