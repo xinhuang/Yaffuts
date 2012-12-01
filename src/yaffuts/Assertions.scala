@@ -11,7 +11,7 @@ trait Assertions {
       if (expect == actual) {
         succeeded()
       } else {
-        failed("Assert.areEqual")
+        throw new AssertionException()
       }
     }
 
