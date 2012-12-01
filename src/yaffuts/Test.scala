@@ -4,13 +4,9 @@ import java.util.ArrayList
 import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
-  protected override def onFail(errorMessage:String) = {
+  protected def onFail(e:AssertionException) = {
     currentMethod.isSuccessfull = false
-    currentMethod.errorMessage = errorMessage
-  }
-
-  protected override def onSucceed() = {
-    currentMethod.isSuccessfull = true
+    currentMethod.errorMessage = e.getStackTrace().toString()
   }
 
   var currentMethod:TestMethod = null
@@ -26,7 +22,7 @@ abstract class Test extends Assertions {
       try {
         currentMethod.method()
       } catch {
-        case e:AssertionException => onFail(e.getStackTrace.toString())
+        case e:AssertionException => onFail(e)
       }
       if (currentMethod.isSuccessfull) {
         succTotal += 1

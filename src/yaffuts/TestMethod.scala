@@ -4,7 +4,7 @@ import java.util.ArrayList
 
 class TestMethod(val name:String, val method:()=>Unit) {
   var errorMessage:String = ""
-  var isSuccessfull:Boolean = false
+  var isSuccessfull:Boolean = true
 }
 
 class TestMethods extends ArrayList[TestMethod] {
