@@ -5,9 +5,7 @@ trait Assertions {
   protected def onSucceed():Unit
 
   object Assert {
-    def fail() = {
-      failed("Assert.fail()")
-    }
+    def fail() = { throw new AssertionException() }
 
     def areEqual[T](expect:T, actual:T) = {
       if (expect == actual) {

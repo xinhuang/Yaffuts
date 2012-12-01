@@ -23,7 +23,11 @@ abstract class Test extends Assertions {
   def run() {
     for (i <- 0 until testMethods.size) {
       currentMethod = testMethods(i)
-      currentMethod.method()
+      try {
+        currentMethod.method()
+      } catch {
+        case e:AssertionException => onFail(e.getStackTrace.toString())
+      }
       if (currentMethod.isSuccessfull) {
         succTotal += 1
       }else{
