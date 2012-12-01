@@ -4,6 +4,8 @@ import java.util.ArrayList
 import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
+  var onProgress:()=>Unit = () => {}
+
   protected def onFail(e:AssertionException) = {
     currentMethod.isSuccessfull = false
     currentMethod.errorMessage = e.getStackTrace().toString()
@@ -29,7 +31,7 @@ abstract class Test extends Assertions {
       }else{
         failTotal += 1
       }
-      print(".")
+      onProgress()
     }
   }
 }
@@ -38,6 +40,7 @@ object Test {
   private val tests = new ArrayList[Test]
 
   def register(test:Test) = {
+    test.onProgress = () => { print(".") }
     tests.add(test)
   }
 
