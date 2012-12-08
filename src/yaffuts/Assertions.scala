@@ -4,7 +4,7 @@ trait Assertions {
   object Assert {
     def isTrue(expression: Boolean) {
       if (!expression)
-        throw new AssertionException
+        throw new AssertionException("Expect true but got false")
     }
 
     def fail() = { throw new AssertionException("Assertion failure") }
