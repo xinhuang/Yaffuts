@@ -1,18 +1,19 @@
 package yaffuts
 
-import java.util.ArrayList
 import yaffuts.ArrayListEx._
+import java.util
 
 abstract class Test extends Assertions {
   def printFailureMessage() {
-    testMethods.select(o => !o.isSuccessful).each(o => println(o.name + "\n" + o.errorMessage))
+    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage)
   }
 
   var onProgress:()=>Unit = () => {}
 
   protected def onFail(e:Throwable) {
     currentMethod.isSuccessful = false
-    currentMethod.errorMessage = e.getStackTrace.toString
+    currentMethod.errorMessage = e.getMessage
+    currentMethod.stackTrace = e.getStackTrace.drop(1)
   }
 
   var currentMethod:TestMethod = null
@@ -42,7 +43,7 @@ abstract class Test extends Assertions {
 }
 
 object Test {
-  private val tests = new ArrayList[Test]
+  private val tests = new util.ArrayList[Test]
 
   def register(test:Test) = {
     test.onProgress = () => { print(".") }
@@ -69,6 +70,6 @@ object Test {
   }
 
   private def printFailureMessage() {
-    tests.each(o => o.printFailureMessage)
+    tests.each(o => o.printFailureMessage())
   }
 }

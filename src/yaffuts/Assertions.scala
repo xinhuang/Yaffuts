@@ -7,7 +7,7 @@ trait Assertions {
         throw new AssertionException
     }
 
-    def fail() = { throw new AssertionException("Assertion failure.") }
+    def fail() = { throw new AssertionException("Assertion failure") }
 
     def areEqual[T](expect:T, actual:T) {
       if (expect != actual) {
