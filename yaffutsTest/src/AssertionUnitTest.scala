@@ -12,7 +12,7 @@ class AssertionUnitTest extends Test {
     }
     catch {
       case e: AssertionException =>
-        Assert.isTrue(e.getMessage().contains("failure"))
+        Assert.isTrue(e.getMessage.toLowerCase.contains("failure"))
     }
   }
 }
