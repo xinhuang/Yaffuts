@@ -1,7 +1,7 @@
 import yaffuts.{TestMethods, Test}
 
 class ThrowNullExceptionTestClass extends Test {
-  def testMethods: TestMethods = new TestMethods(
+  override val testMethods: TestMethods = new TestMethods(
     ("given_access_a_null_reference_should_throw_exception", given_access_a_null_reference_should_throw_exception _)
   )
 

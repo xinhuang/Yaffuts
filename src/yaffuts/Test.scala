@@ -17,7 +17,7 @@ abstract class Test extends Assertions {
 
   var currentMethod:TestMethod = null
 
-  def testMethods:TestMethods
+  val testMethods:TestMethods
 
   var failTotal:Int = 0
   var succTotal:Int = 0

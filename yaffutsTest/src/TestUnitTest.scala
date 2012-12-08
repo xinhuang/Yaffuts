@@ -2,7 +2,7 @@ import yaffuts.{TestMethods, Test}
 
 class TestUnitTest extends Test {
 
-  override def testMethods: TestMethods = new TestMethods(
+  override val testMethods: TestMethods = new TestMethods(
     ("given_assert_fail_execute_should_fail_total_increase", given_assert_fail_execute_should_fail_total_increase _),
     ("given_throw_null_exception_should_fail_total_increase", given_throw_null_exception_should_fail_total_increase _)
   )
