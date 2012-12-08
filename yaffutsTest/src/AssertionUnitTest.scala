@@ -6,7 +6,7 @@ class AssertionUnitTest extends Test {
       given_assert_failure_should_assertion_exception_contains_assert_failure_message)
   )
 
-  def given_assert_failure_should_assertion_exception_contains_assert_failure_message() = {
+  def given_assert_failure_should_assertion_exception_contains_assert_failure_message() {
     try {
       Assert.fail()
     }

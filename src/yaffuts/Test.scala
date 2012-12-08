@@ -6,9 +6,9 @@ import yaffuts.ArrayListEx._
 abstract class Test extends Assertions {
   var onProgress:()=>Unit = () => {}
 
-  protected def onFail(e:AssertionException) = {
-    currentMethod.isSuccessfull = false
-    currentMethod.errorMessage = e.getStackTrace().toString()
+  protected def onFail(e:AssertionException) {
+    currentMethod.isSuccessful = false
+    currentMethod.errorMessage = e.getStackTrace.toString
   }
 
   var currentMethod:TestMethod = null
@@ -26,7 +26,7 @@ abstract class Test extends Assertions {
       } catch {
         case e:AssertionException => onFail(e)
       }
-      if (currentMethod.isSuccessfull) {
+      if (currentMethod.isSuccessful) {
         succTotal += 1
       }else{
         failTotal += 1
@@ -62,6 +62,6 @@ object Test {
     (succTotal, failTotal)
   }
 
-  private def printFailureMessage() = {
+  private def printFailureMessage() {
   }
 }

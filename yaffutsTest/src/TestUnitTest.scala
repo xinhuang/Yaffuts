@@ -8,7 +8,7 @@ class TestUnitTest extends Test {
     result
   }
 
-  def given_assert_fail_execute_should_fail_total_be_1 = {
+  def given_assert_fail_execute_should_fail_total_be_1() {
     val sut = new FailureTest
     val expected = sut.failTotal + 1
 
