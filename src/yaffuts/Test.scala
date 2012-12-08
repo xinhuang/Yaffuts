@@ -5,7 +5,7 @@ import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
   def printFailureMessage() {
-    testMethods.select(o => !o.isSuccessful).each(o => println(o.name))
+    testMethods.select(o => !o.isSuccessful).each(o => println(o.name + "\n" + o.errorMessage))
   }
 
   var onProgress:()=>Unit = () => {}

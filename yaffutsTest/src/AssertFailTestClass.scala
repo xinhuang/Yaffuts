@@ -7,6 +7,8 @@ class AssertFailTestClass extends Test {
     result
   }
 
+  val expectFailure = 1
+
   def given_assert_failure_should_fail() = {
     Assert.fail()
   }
