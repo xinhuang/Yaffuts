@@ -4,9 +4,13 @@ import java.util.ArrayList
 import yaffuts.ArrayListEx._
 
 abstract class Test extends Assertions {
+  def printFailureMessage() {
+    testMethods.select(o => !o.isSuccessful).each(o => println(o.name))
+  }
+
   var onProgress:()=>Unit = () => {}
 
-  protected def onFail(e:AssertionException) {
+  protected def onFail(e:Throwable) {
     currentMethod.isSuccessful = false
     currentMethod.errorMessage = e.getStackTrace.toString
   }
@@ -25,6 +29,7 @@ abstract class Test extends Assertions {
         currentMethod.method()
       } catch {
         case e:AssertionException => onFail(e)
+        case e => onFail(e)
       }
       if (currentMethod.isSuccessful) {
         succTotal += 1
@@ -46,8 +51,9 @@ object Test {
 
   def run() {
     val (succTotal, failTotal) = runAllTests()
+    println()
     printFailureMessage()
-    printf("\nTest: %d. Succeed: %d. Fail: %d.\n",
+    printf("Test: %d. Succeed: %d. Fail: %d.\n",
       succTotal + failTotal, succTotal, failTotal)
   }
 
@@ -63,5 +69,6 @@ object Test {
   }
 
   private def printFailureMessage() {
+    tests.each(o => o.printFailureMessage)
   }
 }

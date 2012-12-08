@@ -2,18 +2,27 @@ import yaffuts.{TestMethods, Test}
 
 class TestUnitTest extends Test {
 
-  override def testMethods: TestMethods = {
-    val result = new TestMethods()
-    result.add("given_assert_failure_should_fail", given_assert_fail_execute_should_fail_total_be_1 _)
-    result
-  }
+  override def testMethods: TestMethods = new TestMethods(
+    ("given_assert_fail_execute_should_fail_total_increase", given_assert_fail_execute_should_fail_total_increase _),
+    ("given_throw_null_exception_should_fail_total_increase", given_throw_null_exception_should_fail_total_increase _)
+  )
 
-  def given_assert_fail_execute_should_fail_total_be_1() {
-    val sut = new FailureTest
-    val expected = sut.failTotal + 1
+
+  def given_assert_fail_execute_should_fail_total_increase() {
+    val sut = new AssertFailTestClass
+    val expect = sut.failTotal + 1
 
     sut.run()
 
-    Assert.areEqual(expected, sut.failTotal)
+    Assert.areEqual(expect, sut.failTotal)
+  }
+
+  def given_throw_null_exception_should_fail_total_increase() {
+    val sut = new ThrowNullExceptionTestClass
+    val expect = sut.failTotal + 1
+
+    sut.run()
+
+    Assert.areEqual(expect, sut.failTotal)
   }
 }

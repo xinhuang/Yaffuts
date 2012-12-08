@@ -11,6 +11,16 @@ class ArrayListEx[T](self:util.ArrayList[T]) {
       action(self(i))
     }
   }
+
+  def select(prediction: (T) => Boolean)  = {
+    val result= new util.ArrayList[T]()
+    this.each(o => {
+      if (prediction(o))
+        result.add(o)
+    })
+    result
+  }
+
 }
 
 object ArrayListEx {
