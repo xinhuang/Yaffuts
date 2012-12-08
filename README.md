@@ -1,12 +1,15 @@
 Yaffuts: Yet Another Framework For Unit Testing Scala
 
-It looks like this: (Just like most xUnit test framework. If not, then it will be. :P)
+It looks like this: 
+(Just like most xUnit test framework. If not, then it will be. :P)
+
 	import yaffuts.{TestMethods, Test}
 
 	class TestUnitTest extends Test {
 
 	  override val testMethods: TestMethods = new TestMethods(
-		("given_assert_fail_execute_should_fail_total_increase", given_assert_fail_execute_should_fail_total_increase _),
+		("given_assert_fail_execute_should_fail_total_increase", 
+		given_assert_fail_execute_should_fail_total_increase _),
 		("given_throw_null_exception_should_fail_total_increase", given_throw_null_exception_should_fail_total_increase _)
 	  )
 
