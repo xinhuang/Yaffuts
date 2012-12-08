@@ -4,24 +4,18 @@ import yaffuts.ArrayListEx._
 import java.util
 
 abstract class Test extends Assertions {
-  def printFailureMessage() {
-    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage)
-  }
+  protected var onProgress:()=>Unit = () => {}
 
-  var onProgress:()=>Unit = () => {}
+  private var currentMethod:TestMethod = null
 
-  protected def onFail(e:Throwable) {
-    currentMethod.isSuccessful = false
-    currentMethod.errorMessage = e.getMessage
-    currentMethod.stackTrace = e.getStackTrace.drop(1)
-  }
-
-  var currentMethod:TestMethod = null
-
-  val testMethods:TestMethods
+  protected val testMethods:TestMethods
 
   var failTotal:Int = 0
   var succTotal:Int = 0
+
+  def printFailureMessage() {
+    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage)
+  }
 
   def run() {
     for (i <- 0 until testMethods.size) {
@@ -29,8 +23,8 @@ abstract class Test extends Assertions {
       try {
         currentMethod.method()
       } catch {
-        case e:AssertionException => onFail(e)
-        case e => onFail(e)
+        case e:AssertionException => onAssertionFail(e)
+        case e => onUnexpectException(e)
       }
       if (currentMethod.isSuccessful) {
         succTotal += 1
@@ -39,6 +33,21 @@ abstract class Test extends Assertions {
       }
       onProgress()
     }
+  }
+
+  private def onUnexpectException(e: Throwable) {
+    currentMethod.errorMessage = "Unexpected exception <" + e.toString + "> caught:"
+    onFail(e.getStackTrace)
+  }
+
+  private def onAssertionFail(e:AssertionException) {
+    currentMethod.errorMessage = e.getMessage
+    onFail(e.getStackTrace)
+  }
+
+  private def onFail(stackTrace: Array[StackTraceElement]) {
+    currentMethod.isSuccessful = false
+    currentMethod.stackTrace = stackTrace.drop(1)
   }
 }
 
