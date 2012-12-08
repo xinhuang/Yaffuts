@@ -7,6 +7,10 @@ class TestMethod(val name:String, val method:()=>Unit) {
   var isSuccessfull:Boolean = true
 }
 
-class TestMethods extends ArrayList[TestMethod] {
-  def add(name:String, method:()=>Unit):Unit = add(new TestMethod(name, method))
+class TestMethods(methods:(String, ()=>Unit)*) extends ArrayList[TestMethod] {
+                     methods.foreach(tuple => add(tuple._1, tuple._2))
+
+  def add(name:String, method:()=>Unit) {
+    add(new TestMethod(name, method))
+  }
 }

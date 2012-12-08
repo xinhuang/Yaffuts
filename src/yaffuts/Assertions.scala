@@ -2,9 +2,14 @@ package yaffuts
 
 trait Assertions {
   object Assert {
-    def fail() = { throw new AssertionException() }
+    def isTrue(expression: Boolean) {
+      if (!expression)
+        throw new AssertionException
+    }
 
-    def areEqual[T](expect:T, actual:T) = {
+    def fail() = { throw new AssertionException("Assertion failure.") }
+
+    def areEqual[T](expect:T, actual:T) {
       if (expect != actual) {
         throw new AssertionException()
       }
