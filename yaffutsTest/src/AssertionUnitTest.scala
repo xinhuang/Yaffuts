@@ -1,7 +1,7 @@
-import yaffuts.{AssertionException, TestMethods, Test}
+import yaffuts.{AssertionException, TestMethodCollection, Test}
 
 class AssertionUnitTest extends Test {
-  override val testMethods: TestMethods = new TestMethods(
+  override val testMethods: TestMethodCollection = new TestMethodCollection(
     ("given_assert_failure_should_assertion_exception_contains_assert_failure_message",
       given_assert_failure_should_assertion_exception_contains_assert_failure_message),
       ("given_assert_is_true_failed_should_assertion_exception_contains_specified_message",

@@ -17,10 +17,4 @@ class TestMethod(val name: String, val method: () => Unit) {
   var isSuccessful: Boolean = true
 }
 
-class TestMethods(methods: (String, () => Unit)*) extends util.ArrayList[TestMethod] {
-  methods.foreach(tuple => add(tuple._1, tuple._2))
 
-  def add(name: String, method: () => Unit) {
-    add(new TestMethod(name, method))
-  }
-}

@@ -8,7 +8,7 @@ abstract class Test extends Assertions {
 
   private var currentMethod:TestMethod = null
 
-  protected val testMethods:TestMethods
+  protected val testMethods:TestMethodCollection
 
   var failTotal:Int = 0
   var succTotal:Int = 0
