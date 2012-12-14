@@ -30,6 +30,9 @@ It looks like this:
 		Assert.areEqual(sut.expectFailure, sut.failTotal)
 	  }
 	}
+
+For detailed examples, please refer to yaffutsTest project, which use yaffuts to bootstrap itself.
+
 ------------
 License
 
