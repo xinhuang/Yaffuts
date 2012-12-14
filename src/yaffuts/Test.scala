@@ -14,7 +14,7 @@ abstract class Test extends Assertions {
   var succTotal:Int = 0
 
   def printFailureMessage() {
-    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage)
+    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage())
   }
 
   def run() {
@@ -54,9 +54,14 @@ abstract class Test extends Assertions {
 object Test {
   private val tests = new util.ArrayList[Test]
 
-  def register(test:Test) = {
+  private def register(test:Test) {
     test.onProgress = () => { print(".") }
     tests.add(test)
+  }
+
+  def register[T <: Test](testClass:Class[T]) {
+    val testInstance:Test = testClass.newInstance()
+    register(testInstance)
   }
 
   def run() {
