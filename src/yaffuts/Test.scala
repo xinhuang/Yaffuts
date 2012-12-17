@@ -8,8 +8,6 @@ abstract class Test extends Assertions {
 
   private var currentMethod:TestMethod = null
 
-  protected val testMethods:TestMethodCollection
-
   var failTotal:Int = 0
   var succTotal:Int = 0
 
@@ -33,28 +31,12 @@ abstract class Test extends Assertions {
       }
       onProgress()
     }
-
-    for (i <- 0 until newTestMethods.size) {
-      currentMethod = newTestMethods(i)
-      try {
-        currentMethod.method()
-      } catch {
-        case e:AssertionException => onAssertionFail(e)
-        case e => onUnexpectException(e)
-      }
-      if (currentMethod.isSuccessful) {
-        succTotal += 1
-      }else{
-        failTotal += 1
-      }
-      onProgress()
-    }
   }
 
-  private val newTestMethods = new TestMethodCollection
+  private val testMethods = new TestMethodCollection
 
   protected def test(name:String): ( =>Unit)=>Unit = {
-    method => newTestMethods.add(name, method _)
+    method => testMethods.add(name, method _)
   }
 
   private def onUnexpectException(e: Throwable) {

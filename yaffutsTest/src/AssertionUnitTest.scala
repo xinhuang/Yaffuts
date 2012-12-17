@@ -1,8 +1,6 @@
 import yaffuts.{AssertionException, TestMethodCollection, Test}
 
 class AssertionUnitTest extends Test {
-  override val testMethods: TestMethodCollection = new TestMethodCollection
-
   test ("given Assert.failure should assertion exception contains assert failure message") {
     try {
       Assert.fail()
