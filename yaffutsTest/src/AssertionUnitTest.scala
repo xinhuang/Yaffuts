@@ -1,14 +1,9 @@
 import yaffuts.{AssertionException, TestMethodCollection, Test}
 
 class AssertionUnitTest extends Test {
-  override val testMethods: TestMethodCollection = new TestMethodCollection(
-    ("given_assert_failure_should_assertion_exception_contains_assert_failure_message",
-      given_assert_failure_should_assertion_exception_contains_assert_failure_message),
-      ("given_assert_is_true_failed_should_assertion_exception_contains_specified_message",
-        given_assert_is_true_failed_should_assertion_exception_contains_specified_message)
-  )
+  override val testMethods: TestMethodCollection = new TestMethodCollection
 
-  def given_assert_failure_should_assertion_exception_contains_assert_failure_message() {
+  test ("given Assert.failure should assertion exception contains assert failure message") {
     try {
       Assert.fail()
     }
@@ -18,7 +13,7 @@ class AssertionUnitTest extends Test {
     }
   }
 
-  def given_assert_is_true_failed_should_assertion_exception_contains_specified_message() {
+  test ("given Assert.isTrue failed should assertion exception contains specified message") {
     try {
       Assert.isTrue(false)
     }
