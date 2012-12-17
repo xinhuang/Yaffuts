@@ -4,12 +4,12 @@ import yaffuts.ArrayListEx._
 import java.util
 
 abstract class Test extends Assertions {
-  protected var onProgress:()=>Unit = () => {}
+  protected var onProgress: () => Unit = () => {}
 
-  private var currentMethod:TestMethod = null
+  private var currentMethod: TestMethod = null
 
-  var failTotal:Int = 0
-  var succTotal:Int = 0
+  var failTotal: Int = 0
+  var succTotal: Int = 0
 
   def printFailureMessage() {
     testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage())
@@ -21,12 +21,12 @@ abstract class Test extends Assertions {
       try {
         currentMethod.method()
       } catch {
-        case e:AssertionException => onAssertionFail(e)
+        case e: AssertionException => onAssertionFail(e)
         case e => onUnexpectException(e)
       }
       if (currentMethod.isSuccessful) {
         succTotal += 1
-      }else{
+      } else {
         failTotal += 1
       }
       onProgress()
@@ -35,7 +35,7 @@ abstract class Test extends Assertions {
 
   private val testMethods = new TestMethodCollection
 
-  protected def test(name:String): ( =>Unit)=>Unit = {
+  protected def test(name: String): (=> Unit) => Unit = {
     method => testMethods.add(name, method _)
   }
 
@@ -44,7 +44,7 @@ abstract class Test extends Assertions {
     onFail(e.getStackTrace)
   }
 
-  private def onAssertionFail(e:AssertionException) {
+  private def onAssertionFail(e: AssertionException) {
     currentMethod.errorMessage = e.getMessage
     onFail(e.getStackTrace)
   }
@@ -58,13 +58,15 @@ abstract class Test extends Assertions {
 object Test {
   private val tests = new util.ArrayList[Test]
 
-  private def register(test:Test) {
-    test.onProgress = () => { print(".") }
+  private def register(test: Test) {
+    test.onProgress = () => {
+      print(".")
+    }
     tests.add(test)
   }
 
-  def register[T <: Test](testClass:Class[T]) {
-    val testInstance:Test = testClass.newInstance()
+  def register[T <: Test](testClass: Class[T]) {
+    val testInstance: Test = testClass.newInstance()
     register(testInstance)
   }
 
@@ -76,7 +78,7 @@ object Test {
       succTotal + failTotal, succTotal, failTotal)
   }
 
-  private def runAllTests():(Int, Int) = {
+  private def runAllTests(): (Int, Int) = {
     var succTotal = 0
     var failTotal = 0
     for (i <- 0 until tests.size) {

@@ -1,4 +1,4 @@
-import yaffuts.{TestMethodCollection, Test}
+import yaffuts.Test
 
 class ThrowNullExceptionTestClass extends Test {
   val expectFailure = 1

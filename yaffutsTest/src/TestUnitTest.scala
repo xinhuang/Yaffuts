@@ -1,7 +1,7 @@
-import yaffuts.{TestMethodCollection, Test}
+import yaffuts.Test
 
 class TestUnitTest extends Test {
-  test ("given assert fail execute should fail total increase") {
+  test("given assert fail execute should fail total increase") {
     val sut = new AssertFailTestClass
 
     sut.run()
@@ -9,7 +9,7 @@ class TestUnitTest extends Test {
     Assert.areEqual(sut.expectFailure, sut.failTotal)
   }
 
-  test ("given throw null exception should fail total increase") {
+  test("given throw null exception should fail total increase") {
     val sut = new ThrowNullExceptionTestClass
 
     sut.run()

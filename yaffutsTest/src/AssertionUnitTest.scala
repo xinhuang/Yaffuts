@@ -1,7 +1,7 @@
-import yaffuts.{AssertionException, TestMethodCollection, Test}
+import yaffuts.{AssertionException, Test}
 
 class AssertionUnitTest extends Test {
-  test ("given Assert.failure should assertion exception contains assert failure message") {
+  test("given Assert.failure should assertion exception contains assert failure message") {
     try {
       Assert.fail()
     }
@@ -11,7 +11,7 @@ class AssertionUnitTest extends Test {
     }
   }
 
-  test ("given Assert.isTrue failed should assertion exception contains specified message") {
+  test("given Assert.isTrue failed should assertion exception contains specified message") {
     try {
       Assert.isTrue(false)
     }
