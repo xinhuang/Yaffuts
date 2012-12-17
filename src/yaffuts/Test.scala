@@ -53,8 +53,8 @@ abstract class Test extends Assertions {
 
   private val newTestMethods = new TestMethodCollection
 
-  protected def test(method: =>Unit) = {
-    newTestMethods.add("your test name", method _)
+  protected def test(name:String): ( =>Unit)=>Unit = {
+    method => newTestMethods.add(name, method _)
   }
 
   private def onUnexpectException(e: Throwable) {
