@@ -33,6 +33,28 @@ abstract class Test extends Assertions {
       }
       onProgress()
     }
+
+    for (i <- 0 until newTestMethods.size) {
+      currentMethod = newTestMethods(i)
+      try {
+        currentMethod.method()
+      } catch {
+        case e:AssertionException => onAssertionFail(e)
+        case e => onUnexpectException(e)
+      }
+      if (currentMethod.isSuccessful) {
+        succTotal += 1
+      }else{
+        failTotal += 1
+      }
+      onProgress()
+    }
+  }
+
+  private val newTestMethods = new TestMethodCollection
+
+  protected def test(method: =>Unit) = {
+    newTestMethods.add("your test name", method _)
   }
 
   private def onUnexpectException(e: Throwable) {
