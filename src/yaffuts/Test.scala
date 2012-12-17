@@ -8,8 +8,10 @@ abstract class Test extends Assertions {
 
   private var currentMethod: TestMethod = null
 
-  var failTotal: Int = 0
-  var succTotal: Int = 0
+  var _failTotal: Int = 0
+  def failTotal: Int = _failTotal
+  var _succTotal: Int = 0
+  def succTotal: Int = _succTotal
 
   def printFailureMessage() {
     testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage())
@@ -25,9 +27,9 @@ abstract class Test extends Assertions {
         case e => onUnexpectException(e)
       }
       if (currentMethod.isSuccessful) {
-        succTotal += 1
+        _succTotal += 1
       } else {
-        failTotal += 1
+        _failTotal += 1
       }
       onProgress()
     }
