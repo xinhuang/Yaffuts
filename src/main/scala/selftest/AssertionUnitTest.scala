@@ -1,3 +1,5 @@
+package yaffuts.selftest
+
 import yaffuts.{AssertionException, Test}
 
 class AssertionUnitTest extends Test {

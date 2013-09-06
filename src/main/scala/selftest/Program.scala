@@ -1,3 +1,5 @@
+package yaffuts.selftest
+
 import yaffuts._
 
 object Program {

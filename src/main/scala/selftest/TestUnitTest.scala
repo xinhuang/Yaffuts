@@ -1,8 +1,10 @@
+package yaffuts.selftest
+
 import yaffuts.Test
 
 class TestUnitTest extends Test {
   test("given assert fail execute should fail total increase") {
-    val sut = new AssertFailTestClass
+    val sut = new AssertFailTestClass()
 
     sut.run()
 
