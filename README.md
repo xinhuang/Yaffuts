@@ -1,4 +1,6 @@
-Yaffuts: Yet Another Framework For Unit Testing Scala
+# Yaffuts
+
+Yet Another Framework For Unit Testing Scala
 
 It looks like this: 
 (Just like most xUnit test framework. If not, then it looks like in the scala way. :P)
@@ -25,8 +27,7 @@ It looks like this:
 
 For detailed examples, please refer to yaffuts.selftest.
 
-------------
-License
+## License
 
 	This program is free software. It comes without any warranty, to
 	the extent permitted by applicable law. You can redistribute it
