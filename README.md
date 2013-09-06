@@ -23,7 +23,7 @@ It looks like this:
 	  }
 	}
 
-For detailed examples, please refer to yaffutsTest project, which use yaffuts to bootstrap itself.
+For detailed examples, please refer to yaffuts.selftest.
 
 ------------
 License
