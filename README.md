@@ -3,7 +3,7 @@ Yaffuts: Yet Another Framework For Unit Testing Scala
 It looks like this: 
 (Just like most xUnit test framework. If not, then it looks like in the scala way. :P)
 
-	import yaffuts.{TestMethods, Test}
+	import yaffuts._
 
 	class TestUnitTest extends Test {
 	  test ("given assert fail execute should fail total increase") {
