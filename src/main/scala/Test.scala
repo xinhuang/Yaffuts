@@ -1,7 +1,6 @@
 package yaffuts
 
-import yaffuts.ArrayListEx._
-import java.util
+import scala.collection.mutable.ArrayBuffer
 
 abstract class Test extends Assertions {
   protected var onProgress: () => Unit = () => {}
@@ -14,7 +13,7 @@ abstract class Test extends Assertions {
   def succTotal: Int = _succTotal
 
   def printFailureMessage() {
-    testMethods.select(o => !o.isSuccessful).each(o => o.printErrorMessage())
+    testMethods.filter(o => !o.isSuccessful).foreach(o => o.printErrorMessage())
   }
 
   def run() {
@@ -24,7 +23,7 @@ abstract class Test extends Assertions {
         currentMethod.method()
       } catch {
         case e: AssertionException => onAssertionFail(e)
-        case e => onUnexpectException(e)
+        case e: Throwable => onUnexpectException(e)
       }
       if (currentMethod.isSuccessful) {
         _succTotal += 1
@@ -58,13 +57,13 @@ abstract class Test extends Assertions {
 }
 
 object Test {
-  private val tests = new util.ArrayList[Test]
+  private val tests = new ArrayBuffer[Test]
 
   private def register(test: Test) {
     test.onProgress = () => {
       print(".")
     }
-    tests.add(test)
+    tests += test
   }
 
   def register[T <: Test](testClass: Class[T]) {
@@ -83,15 +82,16 @@ object Test {
   private def runAllTests(): (Int, Int) = {
     var succTotal = 0
     var failTotal = 0
-    for (i <- 0 until tests.size) {
-      tests(i).run()
-      succTotal += tests(i).succTotal
-      failTotal += tests(i).failTotal
+    tests.foreach ( test => {
+      test.run()
+      succTotal += test.succTotal
+      failTotal += test.failTotal
     }
+    )
     (succTotal, failTotal)
   }
 
   private def printFailureMessage() {
-    tests.each(o => o.printFailureMessage())
+    tests.foreach(o => o.printFailureMessage())
   }
 }
