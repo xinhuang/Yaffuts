@@ -1,9 +1,9 @@
 package yaffuts
 
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable
 
 abstract class Test extends Assertions {
-  protected var onProgress: () => Unit = () => {}
+  private def onTestMethodFinished() = print(".")
 
   private var currentMethod: TestMethod = null
 
@@ -30,7 +30,7 @@ abstract class Test extends Assertions {
       } else {
         _failTotal += 1
       }
-      onProgress()
+      onTestMethodFinished()
     }
   }
 
@@ -57,14 +57,9 @@ abstract class Test extends Assertions {
 }
 
 object Test {
-  private val tests = new ArrayBuffer[Test]
+  private val tests = new mutable.ArrayBuffer[Test]
 
-  private def register(test: Test) {
-    test.onProgress = () => {
-      print(".")
-    }
-    tests += test
-  }
+  private def register(test: Test) = tests += test
 
   def register[T <: Test](testClass: Class[T]) {
     val testInstance: Test = testClass.newInstance()
