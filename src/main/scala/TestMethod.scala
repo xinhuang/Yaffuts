@@ -1,6 +1,5 @@
 package yaffuts
 
-
 class TestMethod(val name: String, val method: () => Unit) {
   def printErrorMessage() {
     println("Failed: " + name)
@@ -10,10 +9,8 @@ class TestMethod(val name: String, val method: () => Unit) {
       o.getFileName, o.getLineNumber))
   }
 
-  var stackTrace: Array[StackTraceElement] = null
+  var stackTrace: Seq[StackTraceElement] = Seq()
 
-  var errorMessage: String = ""
-  var isSuccessful: Boolean = true
+  var errorMessage = ""
+  var isSuccessful = true
 }
-
-
